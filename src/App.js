@@ -1,9 +1,10 @@
+import Axios from "axios";
 import React, { useState } from "react";
 import styled from "styled-components";
-import Axios from "axios";
+// import CityComponent from "./modules/CityComponent";
+// import WeatherComponent from "./modules/WeatherInfoComponent";
 import CityComponent from "./modules/CityComponent";
 import WeatherComponent from "./modules/WeatherInfoComponent";
-
 export const WeatherIcons = {
   "01d": "/demo-playwright-component-testing/icons/sunny.svg",
   "01n": "/demo-playwright-component-testing/icons/night.svg",

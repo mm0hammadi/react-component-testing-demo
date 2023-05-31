@@ -28,3 +28,4 @@ test('Click on `Search` button executes fetchWeather prop', async ({ mount }) =>
 
     expect(isCalled).toBeTruthy()
 });
+

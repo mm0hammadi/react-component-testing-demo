@@ -1,12 +1,13 @@
 // @ts-check
-const { devices } = require('@playwright/experimental-ct-react');
+// const { devices } = require('@playwright/experimental-ct-react');
+import { defineConfig, devices } from '@playwright/experimental-ct-react';
 
 /**
  * @see https://playwright.dev/docs/test-configuration
  * @type {import('@playwright/experimental-ct-react').PlaywrightTestConfig}
  */
-const config = {
-  testDir: './',
+export default defineConfig({
+  testDir: 'tests',
   /* The base directory, relative to the config file, for snapshot files created with toMatchSnapshot and toHaveScreenshot. */
   snapshotDir: './__snapshots__',
   /* Maximum time one test can run for. */
@@ -20,7 +21,8 @@ const config = {
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  // reporter: 'html',
+  reporter: 'experimental-allure-playwright',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
@@ -51,6 +53,6 @@ const config = {
       },
     },
   ],
-};
+});
 
-module.exports = config;
+// module.exports = defineConfig;

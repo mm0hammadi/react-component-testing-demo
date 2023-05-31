@@ -4,12 +4,13 @@
   "homepage": "http://cuongld2.github.io/demo-playwright-component-testing",
   "private": true,
   "dependencies": {
+    "@playwright/test": "^1.24.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "gh-pages": "^3.2.2",
-    "react": "^17.0.2",
+    "react": "18.2.0",
     "react-dom": "^17.0.2",
     "react-scripts": "^5.0.1",
     "styled-components": "^5.3.0",
@@ -17,7 +18,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "test": "playwright test",
+    "report": "playwright show-report",
+    "debug": "npx playwright test — debug",
+    "ui": "playwright test --ui",
     "test-ct": "playwright test -c playwright-ct.config.js"
+  },
+  "overrides": {
+    "react-refresh": "0.11.0"
   },
   "eslintConfig": {
     "extends": [
@@ -38,6 +46,8 @@
     ]
   },
   "devDependencies": {
-    "@playwright/experimental-ct-react": "^1.28.1"
+    "@playwright/experimental-ct-react": "^1.34.3",
+    "@playwright/test": "^1.24.1",
+    "experimental-allure-playwright": "^0.0.3"
   }
 }
